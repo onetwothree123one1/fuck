@@ -6,6 +6,7 @@ import Blogs from './Components/Blogs'
 import Login from './Components/Login';
 import Detail from './Components/DetailBlg';
 import Add from './Components/Add';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,40 +18,42 @@ import {
 function App() {
   return (
     <div className="App">
-    <Router>
-     
-    
-    <Switch>
-    
-    <Route path="/login">
-          <Login />
-          </Route>
-<div>
-    <Nav />
-          <Route path="/home">
-          <Home />
-          </Route>
+      <Router>
 
 
-          <Route path="/posts">
-            <Posts />
-          </Route>
+        <Switch>
 
-          <Route path="/blogs" exact>
-          <Blogs />
+          <Route path="/login">
+            <Login />
           </Route>
+          <div>
+            <Nav />
+            <Route path="/home">
+              <Home />
+            </Route>
 
-          <Route path="/blogs/:id" >
-               <Detail />
-          </Route>
-          <Route path="/add" >
-               <Add />
-          </Route>
-          </div>      
-      </Switch>
+
+            <Route path="/posts">
+              <Posts />
+            </Route>
+
+            <Route path="/blogs" exact>
+              <Blogs />
+            </Route>
+
+            <Route path="/blogs/:id" >
+              <Detail />
+            </Route>
+            <Route path="/add" >
+              <Add />
+            </Route>
+
+
+          </div>
+        </Switch>
       </Router>
-      </div>
-    );
+    </div>
+  );
 }
 
 export default App;
